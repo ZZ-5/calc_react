@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "vite --config vite.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc && vite build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vite serve ./dist"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,7 @@
     "@reduxjs/toolkit": "2.2.1",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
-    "redux-toolkit": "1.1.2"
+    "react-redux": "^9.1.0"
   },
   "devDependencies": {
     "@types/react": "18.2.67",
