@@ -1,13 +1,15 @@
 import React from 'react';
-import { LayoutWrapper } from './styles';
+import { LayoutWrapper, PhoneWrapper } from './styles';
 import { Keyboard } from '../Keyboard';
 import { Display } from '../Display';
 
 export const Layout = () => {
   return (
     <LayoutWrapper>
-      <Display />
-      <Keyboard />
+      <PhoneWrapper>
+        <Display />
+        <Keyboard />
+      </PhoneWrapper>
     </LayoutWrapper>
   );
 };

@@ -1,6 +1,15 @@
 import React from 'react';
-import { StylesDisplay } from './style';
+import { StylesCalculations, StylesDisplay, StylesResult } from './style';
+import { useAppSelector } from '../../hooks';
 
 export const Display = () => {
-  return <StylesDisplay></StylesDisplay>;
+  const calculations = useAppSelector(state => state.displaySliceReducer.value);
+  const result = useAppSelector(state => state.displaySliceReducer.result);
+
+  return (
+    <StylesDisplay>
+      <StylesCalculations>{calculations}</StylesCalculations>
+      <StylesResult>{result}</StylesResult>
+    </StylesDisplay>
+  );
 };
