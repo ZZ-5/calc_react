@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-
-const reducer = {};
+import displaySliceReducer from './calculationsSlice';
+const reducer = {
+  displaySliceReducer: displaySliceReducer,
+};
 
 export const store = configureStore({
-  reducer
+  reducer,
 });
 
 export type AppDispatch = typeof store.dispatch;
