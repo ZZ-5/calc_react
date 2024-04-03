@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StylesDisplay = styled.div`
   width: 100%;
-  height: 50%;
+  height: 80%;
   display: flex;
   background-color: rgba(23, 24, 26, 1);
   justify-content: end;

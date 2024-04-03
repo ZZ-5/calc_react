@@ -29,53 +29,14 @@ export const Keyboard = () => {
     document.addEventListener('keydown', detectKeyDown, true);
   }, []);
 
-  const detectKeyDown = (e: React.KeyboardEvent) => {
+  const detectKeyDown = (e: KeyboardEvent) => {
+    const operators = ['/', '+', '-', '*', '.'];
+
+    if (+e.key || e.key === '0' || operators.includes(e.key)) {
+      dispatch(addSymbol(e.key));
+    }
+
     switch (e.key) {
-      case '1':
-        dispatch(addSymbol('1'));
-        break;
-      case '2':
-        dispatch(addSymbol('2'));
-        break;
-      case '3':
-        dispatch(addSymbol('3'));
-        break;
-      case '4':
-        dispatch(addSymbol('4'));
-        break;
-      case '5':
-        dispatch(addSymbol('5'));
-        break;
-      case '6':
-        dispatch(addSymbol('6'));
-        break;
-      case '7':
-        dispatch(addSymbol('7'));
-        break;
-      case '8':
-        dispatch(addSymbol('8'));
-        break;
-      case '9':
-        dispatch(addSymbol('9'));
-        break;
-      case '0':
-        dispatch(addSymbol('0'));
-        break;
-      case '+':
-        dispatch(addSymbol('+'));
-        break;
-      case '-':
-        dispatch(addSymbol('-'));
-        break;
-      case '*':
-        dispatch(addSymbol('*'));
-        break;
-      case '.':
-        dispatch(addSymbol('.'));
-        break;
-      case '/':
-        dispatch(addSymbol('/'));
-        break;
       case 'Enter':
         dispatch(addResult());
         break;
@@ -84,9 +45,6 @@ export const Keyboard = () => {
         break;
       case 'Delete':
         dispatch(allClear());
-        break;
-
-      default:
         break;
     }
   };

@@ -14,7 +14,7 @@ export const StylesKeyboardKeys = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0 2rem;
+  gap: 2rem;
   align-items: end;
   margin: 3rem 0;
 `;
