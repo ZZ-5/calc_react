@@ -12,7 +12,7 @@ import {
 import del_icon from '../../assets/icons/delete_icon.png';
 import { useAppDispatch } from '../../hooks';
 import {
-  addResult,
+  getResult,
   addSymbol,
   allClear,
   deleteSymbol,
@@ -38,7 +38,7 @@ export const Keyboard = () => {
 
     switch (e.key) {
       case 'Enter':
-        dispatch(addResult());
+        dispatch(getResult());
         break;
       case 'Backspace':
         dispatch(deleteSymbol());
@@ -58,22 +58,22 @@ export const Keyboard = () => {
         <StylesKeyDel onClick={() => dispatch(deleteSymbol())}>
           <StylesKeyDelImg src={del_icon}></StylesKeyDelImg>
         </StylesKeyDel>
-        <StylesKeySign onClick={e => onClick(e)}>/</StylesKeySign>
-        <StylesKeyCount onClick={e => onClick(e)}>7</StylesKeyCount>
-        <StylesKeyCount onClick={e => onClick(e)}>8</StylesKeyCount>
-        <StylesKeyCount onClick={e => onClick(e)}>9</StylesKeyCount>
-        <StylesKeySign onClick={e => onClick(e)}>*</StylesKeySign>
-        <StylesKeyCount onClick={e => onClick(e)}>4</StylesKeyCount>
-        <StylesKeyCount onClick={e => onClick(e)}>5</StylesKeyCount>
-        <StylesKeyCount onClick={e => onClick(e)}>6</StylesKeyCount>
-        <StylesKeySign onClick={e => onClick(e)}>-</StylesKeySign>
-        <StylesKeyCount onClick={e => onClick(e)}>1</StylesKeyCount>
-        <StylesKeyCount onClick={e => onClick(e)}>2</StylesKeyCount>
-        <StylesKeyCount onClick={e => onClick(e)}>3</StylesKeyCount>
-        <StylesKeySign onClick={e => onClick(e)}>+</StylesKeySign>
-        <StylesWideKeyCount onClick={e => onClick(e)}>0</StylesWideKeyCount>
-        <StylesKeyCount onClick={e => onClick(e)}>.</StylesKeyCount>
-        <StylesKeySign onClick={() => dispatch(addResult())}>=</StylesKeySign>
+        <StylesKeySign onClick={onClick}>/</StylesKeySign>
+        <StylesKeyCount onClick={onClick}>7</StylesKeyCount>
+        <StylesKeyCount onClick={onClick}>8</StylesKeyCount>
+        <StylesKeyCount onClick={onClick}>9</StylesKeyCount>
+        <StylesKeySign onClick={onClick}>*</StylesKeySign>
+        <StylesKeyCount onClick={onClick}>4</StylesKeyCount>
+        <StylesKeyCount onClick={onClick}>5</StylesKeyCount>
+        <StylesKeyCount onClick={onClick}>6</StylesKeyCount>
+        <StylesKeySign onClick={onClick}>-</StylesKeySign>
+        <StylesKeyCount onClick={onClick}>1</StylesKeyCount>
+        <StylesKeyCount onClick={onClick}>2</StylesKeyCount>
+        <StylesKeyCount onClick={onClick}>3</StylesKeyCount>
+        <StylesKeySign onClick={onClick}>+</StylesKeySign>
+        <StylesWideKeyCount onClick={onClick}>0</StylesWideKeyCount>
+        <StylesKeyCount onClick={onClick}>.</StylesKeyCount>
+        <StylesKeySign onClick={() => dispatch(getResult())}>=</StylesKeySign>
       </StylesKeyboardKeys>
     </StylesKeyboard>
   );

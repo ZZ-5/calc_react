@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { calculations } from '../functions/helpers';
 
 type DisplayState = {
   value: string;
@@ -32,46 +33,12 @@ export const displaySlice = createSlice({
     deleteSymbol: (state: DisplayState) => {
       state.value = state.value.slice(0, -1);
     },
-    addResult: (state: DisplayState) => {
-      let a = 0;
-      let sign = '';
-      let b = 0;
-      const action = ['-', '+', '*', '/'];
-
-      for (let i = 0; i < state.value.length; i++) {
-        if (action.includes(state.value[i])) {
-          sign = state.value[i];
-          a = Number(state.value.slice(0, i));
-          b = Number(state.value.slice(i + 1));
-        }
-      }
-
-      switch (sign) {
-        case '+':
-          a = a + b;
-          state.result = a.toString();
-          b = 0;
-          break;
-        case '-':
-          a = a - b;
-          state.result = a.toString();
-          b = 0;
-          break;
-        case '*':
-          a = a * b;
-          state.result = a.toString();
-          b = 0;
-          break;
-        case '/':
-          a = a / b;
-          state.result = a.toString();
-          b = 0;
-          break;
-      }
+    getResult: (state: DisplayState) => {
+      state.result = calculations(state.value, state.result);
     },
   },
 });
 
-export const { allClear, addSymbol, deleteSymbol, addResult } =
+export const { allClear, addSymbol, deleteSymbol, getResult } =
   displaySlice.actions;
 export default displaySlice.reducer;

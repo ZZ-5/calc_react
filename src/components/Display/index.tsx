@@ -3,12 +3,11 @@ import { StylesCalculations, StylesDisplay, StylesResult } from './style';
 import { useAppSelector } from '../../hooks';
 
 export const Display = () => {
-  const calculations = useAppSelector(state => state.displaySliceReducer.value);
-  const result = useAppSelector(state => state.displaySliceReducer.result);
+  const { result, value } = useAppSelector(state => state.displaySliceReducer);
 
   return (
     <StylesDisplay>
-      <StylesCalculations>{calculations}</StylesCalculations>
+      <StylesCalculations>{value}</StylesCalculations>
       <StylesResult>{result}</StylesResult>
     </StylesDisplay>
   );
