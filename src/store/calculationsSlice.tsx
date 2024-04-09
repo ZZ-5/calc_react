@@ -34,7 +34,7 @@ export const displaySlice = createSlice({
       state.value = state.value.slice(0, -1);
     },
     getResult: (state: DisplayState) => {
-      state.result = calculations(state.value, state.result);
+      state.result = calculations(state.value);
     },
   },
 });

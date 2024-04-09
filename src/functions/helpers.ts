@@ -1,24 +1,9 @@
-export const calculations = (value: string, result: string) => {
+export const calculations = (value: string) => {
   let a: string | number = '';
   let b: string | number = '';
   let sign = '';
   const action = ['-', '+', '*', '/'];
-
-  // for (let i = value.length; i >= 0; i--) {
-  //   if (action.includes(value[i])) {
-  //     if (result === '') {
-  //       sign = value[i];
-  //       a = value.slice(0, i);
-  //       b = value.slice(i + 1);
-  //     } else {
-  //       sign = value[i];
-  //       a = result;
-  //       b = value.slice(i + 1);
-  //       break;
-  //     }
-  //   }
-  // }
-
+  let res = '';
   let arr = [];
   let str = '';
 
@@ -47,15 +32,10 @@ export const calculations = (value: string, result: string) => {
     } else if (a !== 0 && b === '') {
       b = i;
     }
-    // console.log(a, sign, b);
-    if (sign !== '') {
+    if (sign !== '' && b !== '') {
       switch (sign) {
         case '+':
-          // console.log(a, sign, b);
-
           a = +a + +b;
-          // console.log(a, sign, b);
-
           b = '';
           break;
         case '-':
@@ -72,34 +52,8 @@ export const calculations = (value: string, result: string) => {
           break;
       }
     }
-    console.log((result = a.toString()));
+    res = a.toString();
   });
 
-  // switch (sign) {
-  //   case '+':
-  //     a = +a + +b;
-  //     a = a.toString();
-  //     result = a;
-  //     b = '';
-  //     break;
-  //   case '-':
-  //     a = +a - +b;
-  //     a = a.toString();
-  //     result = a;
-  //     b = '';
-  //     break;
-  //   case '*':
-  //     a = +a * +b;
-  //     a = a.toString();
-  //     result = a.toString();
-  //     b = '';
-  //     break;
-  //   case '/':
-  //     a = +a / +b;
-  //     a = a.toString();
-  //     result = a;
-  //     b = '';
-  //     break;
-
-  return result;
+  return res;
 };
