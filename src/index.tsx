@@ -12,13 +12,25 @@ if (!root) {
 }
 
 const Global = createGlobalStyle`
-  * {
+  html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
     background-color: #dddddd;
     font-family: 'Poppins';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a,
+  input,
+  button,
+  ul,
+  li {
     border: none;
   }
 `;
