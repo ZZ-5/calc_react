@@ -3,6 +3,7 @@ import {
   StylesKeyCount,
   StylesKeyDel,
   StylesKeyDelImg,
+  StylesKeyMul,
   StylesKeySign,
   StylesKeyboard,
   StylesKeyboardKeys,
@@ -62,7 +63,7 @@ export const Keyboard = () => {
         <StylesKeyCount onClick={onClick}>7</StylesKeyCount>
         <StylesKeyCount onClick={onClick}>8</StylesKeyCount>
         <StylesKeyCount onClick={onClick}>9</StylesKeyCount>
-        <StylesKeySign onClick={onClick}>*</StylesKeySign>
+        <StylesKeyMul onClick={onClick}>*</StylesKeyMul>
         <StylesKeyCount onClick={onClick}>4</StylesKeyCount>
         <StylesKeyCount onClick={onClick}>5</StylesKeyCount>
         <StylesKeyCount onClick={onClick}>6</StylesKeyCount>

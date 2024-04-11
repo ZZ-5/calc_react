@@ -20,12 +20,15 @@ export const displaySlice = createSlice({
       state.result = '';
     },
     addSymbol: (state: DisplayState, action: PayloadAction<string>) => {
-      const operators = ['/', '+', '-', '*', '.'];
+      const operators = ['/', '+', '*', '.'];
       if (
         (operators.includes(action.payload) && state.value === '') ||
         (operators.includes(action.payload) &&
-          operators.includes(state.value.slice(-1)))
-      ) {
+          operators.includes(state.value.slice(-1))) ||
+        (operators.includes(action.payload) && state.value.slice(-1) === '-')
+      )
+        return;
+      else if (state.value.slice(-1) === '-' && action.payload === '-') {
         return;
       }
       state.value += action.payload;

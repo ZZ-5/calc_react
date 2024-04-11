@@ -65,6 +65,20 @@ export const StylesKeySign = styled.button`
   cursor: pointer;
 `;
 
+export const StylesKeyMul = styled.button`
+  width: 100%;
+  max-width: 6.2rem;
+  height: 6rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  border-radius: 1.6rem;
+  background-color: rgba(0, 93, 178, 1);
+  color: rgba(51, 157, 255, 1);
+  font-size: 3.2rem;
+  cursor: pointer;
+`;
+
 export const StylesWideKeyCount = styled.button`
   width: 100%;
   max-width: 14.4rem;
